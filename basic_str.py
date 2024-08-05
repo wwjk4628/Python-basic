@@ -195,7 +195,7 @@ def split_join_method():
     Python Programming
     HTML Coding
     """
-    print(lines)
+    print("split:", lines.split())
 
 
 if __name__ == "__main__":
