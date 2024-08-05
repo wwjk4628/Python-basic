@@ -216,6 +216,44 @@ def check_methods():
     print("python".islower()) # 모두 소문자?
     print("Python Programming". istitle())
 
+def string_format():
+    """
+    문자열 포맷팅 연습
+    """
+    # c 스타일 문자열 포맷
+    # %s, %c, %d, %f, %x, %o, %%
+    fmt = "%d개의 %s 중에서 %d개를 먹었다"
+    print(fmt % (10, "사과", 3))
+
+    print("현재 이자율은 %f%%입니다." % 3.4)
+    print("현재 이자율은 %.2f%%입니다." % 3.4)
+
+    # named formatting
+    fmt = "%(total)d개의 %(fruit)s 중에서 %(eat)d개를 먹었다."
+    print(fmt % {"total": 10, "fruit": "사과", "eat": 3})
+    print(fmt % {"fruit": "사과", "eat": 3, "total": 10})
+
+    # format 메서드
+    fmt = "{}개의 {} 중에서 {}개를 먹었다"
+    print(fmt.format(10, "사과", 3))
+    print("{0}개의 {1} 중에서 {2}개를 먹었다".format(10, "사과", 3))
+
+    # placeholder의 named parameter를 이용
+    fmt = "{total}개의 {fruit} 중에서 {eat}개를 먹었다"
+    print(fmt.format(eat=3, total=10, fruit="사과"))
+
+    # dict 작성한 데이터가 있을 경우 : format_map
+    data = {"total": 10, "eat": 3, "fruit": "사과"}
+    print(fmt.format_map(data))
+
+    # f-string
+    # 포맷팅 문자열 앞에 f
+    # {} 내부에 데이터, 변수명, 표현식 -> 해당 결과 바인딩 -> 최종 출력물
+    total, fruit, eat = 10, "사과", 3
+    print(f"{total}개의 {fruit} 중에서 {eat}개를 먹었다")
+    # 플레이스 홀더 내부의 연산식 활용 가능
+    total, fruit, eat = 10, "apple", 3
+    print(f"{total}개의 {fruit.upper()} 중에서 {eat}개를 먹었다")
 
 if __name__ == "__main__":
     # define_str()
@@ -225,4 +263,5 @@ if __name__ == "__main__":
     # modify_replace_methods()
     # align_methods()
     # split_join_method()
-    check_methods()
+    # check_methods()
+    string_format()
