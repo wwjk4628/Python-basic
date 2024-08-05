@@ -196,6 +196,25 @@ def split_join_method():
     HTML Coding
     """
     print("split:", lines.split())
+    print("split:", lines.split("\n"))
+
+    print("split:", lines.splitlines(True))
+    print("split:", lines.splitlines(False))
+
+def check_methods():
+    """
+    str 데이터의 형태 판별
+    """
+    print("1234".isdigit()) # 숫자 형태?
+    print("abcd".isalpha()) # 알파벳 형태?
+    print("Python3".isalnum()) # 숫자 + 알파벳 형태?
+    print("Python 3".isalnum())
+    print(" \r\n\t".isspace()) # 공백문자 형태?
+    print("".isspace())
+
+    print("PYTHON".isupper()) # 모두 대문자?
+    print("python".islower()) # 모두 소문자?
+    print("Python Programming". istitle())
 
 
 if __name__ == "__main__":
@@ -205,4 +224,5 @@ if __name__ == "__main__":
     # search_methods()
     # modify_replace_methods()
     # align_methods()
-    split_join_method()
+    # split_join_method()
+    check_methods()
