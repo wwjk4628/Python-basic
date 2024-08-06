@@ -191,7 +191,7 @@ def queue_ex():
     print(queue)
 
 
-def loop():ai code interpreter
+def loop():
     """
     순차 자료형의 순회
     for 변수 in 순차형: 별도 인덱스 변수는 없음
